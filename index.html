@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>My Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .calculator{
+                width: 400px;
+                height: 445px;
+                background: #333;
+            }
+            .dis{
+                width: 360px;
+                height: 50px;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: right;
+                outline:none;
+                transition: 2s;
+                
+            }
+            .dis:hover{
+                box-shadow: silver 0px 0px 10px;
+            }
+            input[type="button"]{
+                text-align: center;
+                padding: 10px;
+                margin-left: 6px;
+                margin-bottom: 5px;
+                margin-right: 4px;
+                width: 65px;
+                height: 65px;
+                font-size: 14px;
+                font-weight: bold;
+                border-radius: 5px;
+                outline: none;
+                cursor: context-menu;
+                transition: all 1s linear;
+            }
+            input[type="button"]:hover{
+                background: #006666;
+                color: white;
+                box-shadow: white 0px 0px 10px;
+                transition: all 2s ease;
+            }
+            .ac{
+                background: red;
+            }
+            .equal{
+                background: green;
+                color:white;
+            }
+            .back{
+                background:#cccc00;
+            }
+        </style>
+        <script>
+            function myclick(a){
+                myform.display.value += a;
+            }
+            function equalto(){
+                myform.display.value=eval(myform.display.value);
+            }
+            function ac(){
+                myform.display.value = "";
+            }
+            function backspace(){
+                var prevalue = myform.display.value;
+                myform.display.value = prevalue.substr(0,prevalue.length-1);
+            }
+            function sins(){
+                myform.display.value = Math.sin(myform.display.value);
+            }
+            function coses(){
+                myform.display.value = Math.cos(myform.display.value);
+            }
+            function tans(){
+                myform.display.value = Math.tan(myform.display.value);
+            }
+            function sq(){
+                myform.display.value = Math.pow(myform.display.value,2);
+            }
+            function root(){
+                myform.display.value = Math.pow(myform.display.value,1/2);
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+        <div class="calculator">
+            <form name="myform">
+                <input type="text" name="display" class="dis"><br>
+                
+                <input type="button" name="btn9" value="9" onclick="myclick('9')">
+                <input type="button" name="btn8" value="8" onclick="myclick('8')">
+                <input type="button" name="btn7" value="7" onclick="myclick('7')">
+                <input type="button" name="btnplus" value="+" onclick="myclick('+')">
+                <input type="button" name="equal" class="equal" value="=" onclick="equalto()"><br>
+                
+                <input type="button" name="btn4" value="4" onclick="myclick('4')">
+                <input type="button" name="btn5" value="5" onclick="myclick('5')">
+                <input type="button" name="btn6" value="6" onclick="myclick('6')">
+                <input type="button" name="btnminas" value="-" onclick="myclick('-')">
+                <input type="button" name="btnac" class="ac" value="AC" onclick="ac()"><br>
+                
+                <input type="button" name="btn1" value="1" onclick="myclick('1')">
+                <input type="button" name="btn2" value="2" onclick="myclick('2')">
+                <input type="button" name="btn4" value="3" onclick="myclick('3')">
+                <input type="button" name="btnmult" value="*" onclick="myclick('*')">
+                <input type="button" name="delete" class="back" value="Del" onclick="backspace()"><br>
+                
+                <input type="button" name="btnzero" value="0" onclick="myclick('0')">
+                <input type="button" name="btndzero" value="00" onclick="myclick('00')">
+                <input type="button" name="btndot" value="." onclick="myclick('.')">
+                <input type="button" name="btndiv" value="/" onclick="myclick('/')">
+                <input type="button" name="modulas" value="%" onclick="myclick('%')"><br>
+                
+                <input type="button" name="equal" value="Sin" onclick="sins()">
+                <input type="button" name="equal" value="Cos" onclick="coses()">
+                <input type="button" name="equal" value="Tan" onclick="tans()">
+                <input type="button" name="equal" value="^2" onclick="sq()">
+                <input type="button" name="equal" value="Root" onclick="root()">
+                
+                
+            </form>
+        </div>
+        </center>>
+    </body>
+</html>
